@@ -6,11 +6,11 @@ metadata:
 spec:
   project: weather-news
   source:
-    repoURL: [https://github.com/avisubir350/weather-config.git](https://github.com/avisubir350/weather-config.git)
+    repoURL: https://github.com/avisubir350/weather-config.git
     targetRevision: main
     path: .
   destination:
-    server: [https://kubernetes.default.svc](https://kubernetes.default.svc)
+    server: https://kubernetes.default.svc
     namespace: weather # All resources will be sent here
   syncPolicy:
     automated:
@@ -18,3 +18,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true # IMPORTANT: Tells Argo to create 'weather' if it doesn't exist
+
