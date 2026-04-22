@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   rules:
-  - host: localhost:8080
+  - host: localhost
     http:
       paths:  
       - path: /
