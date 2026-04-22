@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: weather
+  namespace: argocd # This is where ArgoCD itself is installed
+spec:
+  project: weather-news
+  source:
+    repoURL: [https://github.com/avisubir350/weather-config.git](https://github.com/avisubir350/weather-config.git)
+    targetRevision: main
+    path: .
+  destination:
+    server: [https://kubernetes.default.svc](https://kubernetes.default.svc)
+    namespace: weather # All resources will be sent here
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # IMPORTANT: Tells Argo to create 'weather' if it doesn't exist
