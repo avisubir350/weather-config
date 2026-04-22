@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-news-deployment
+  labels:
+    app: weather-news
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: weather-news
+  template:
+    metadata:
+      labels:
+        app: weather-news
+    spec:
+      containers:
+      - name: weather-news-container
+        image: avisubir350/weather-news-app:v1.0
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
