@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: weather-news-deployment
+  namespace: weather # Matches the Application destination
   labels:
     app: weather-news
 spec:
