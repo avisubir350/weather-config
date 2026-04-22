@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: weather-news-container
-        image: avisubir/weather-news-dashboard:1e86e9b
+        image: avisubir/weather-news-dashboard:d23ecca
         ports:
         - containerPort: 8080
         resources:
