@@ -19,7 +19,7 @@ spec:
       - name: weather-news-container
         image: avisubir/weather-news-dashboard:7fd2645
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
         resources:
           limits:
             memory: "512Mi"
